@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VLSM Generator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+
+<body>
+    <section class="section">
+        <div class="container">
+            <h1 class="title">
+                VLSM Generator
+            </h1>
+            <p class="subtitle">
+                Helps with creation of VLSM networks! (only /24 and above subnets)
+            </p>
+            <p>Start here: </p>
+            <label >How many subnets do you have?</label> <input id="subnetAmount">Enter number</input>
+            <div id='subnets'></div>
+        </div>
+    </section>
+    <script src="./jquery.js"></script>
+    <script src="./vlsm.js"></script>
+    <style type="text/css">
+        .tg  {border-collapse:collapse;border-spacing:0;}
+        .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+        .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+        .tg .tg-0lax{text-align:left;vertical-align:top;}
+        table{display:none;}
+        </style>
+    <table id='ipTable' class="tg" style="undefined;table-layout: fixed; width: 517px">
+        <colgroup>
+        <col style="width: 69px">
+        <col style="width: 162px">
+        <col style="width: 286px">
+        </colgroup>
+            <tr>
+            <th class="tg-0lax">ID</th>
+            <th class="tg-0lax">Host Range</th>
+            <th class="tg-0lax">Broadcast</th>
+            <th class="tg-0lax">/Subnet</th>
+            </tr>
+    </table>
+
+</body>
+
+</html>
