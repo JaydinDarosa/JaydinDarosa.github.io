@@ -1,0 +1,31 @@
+body {
+    background: #161616 url(./images/dark-honeycomb.png) 0 0;
+    background-repeat: repeat;
+    color: white;
+    margin: 0;
+    padding: 0;
+    font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
+
+}
+#headerTitle::before {
+    content: ">";
+    color: lime;
+    animation:blinker 0.8s infinite;
+
+}
+header {
+    padding: 60px;
+    background: rgba(0, 0, 0, .25);
+    border-bottom: red 1px dashed;
+    color: white;
+    font-size: 30px;
+    font-size: 15px;
+}
+
+@keyframes blinker{
+	0%{		color: lime;	}
+	49%{	color: transparent;	}
+	50%{	color: transparent;	}
+	99%{	color:transparent;	}
+	100%{	color: lime;	}
+}

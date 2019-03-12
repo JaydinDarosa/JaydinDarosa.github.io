@@ -74,6 +74,7 @@ function validateSubnetSizes() {
 }
 
 function createNetworkTable() {
+    
     let idSplit = VLSM.ip.split(".");
     idSplit.pop();
     
@@ -87,11 +88,20 @@ function createNetworkTable() {
         let hostPortion = Math.log(temp[i]) / Math.log(2)
         let networkPortion = 8 - hostPortion;
         let sn = 24 + networkPortion;
+        let snBinary = "";
+        for (let j = 0;j < networkPortion; j++) {
+            snBinary += 1;
+        }
+        for (let j = 0; j < hostPortion; j++) {
+            snBinary += 0;
+        }
+        console.log(snBinary)
+        snBinary = Number.parseInt(snBinary, 2);
         $("#ipTable").append(`            <tr>
-        <td class="tg-0lax">${curID}</td>
-        <td class="tg-0lax">${curID + 1} - ${curID + temp[i] - 2}</td>
-        <td class="tg-0lax">${curID + temp[i] - 1}</td>
-        <th class="tg-0lax">/${sn}</th>
+        <td class="tg-0lax">${idSplit.join(".") + "." + curID}</td>
+        <td class="tg-0lax">${idSplit.join(".") + "." + (curID + 1)} - ${idSplit.join(".") + "." +(curID + temp[i] - 2)}</td>
+        <td class="tg-0lax">${idSplit.join(".") + "." +(curID + temp[i] - 1)}</td>
+        <th class="tg-0lax">/${sn} or 255.255.255.${snBinary} </th>
         </tr>`)
         curID += temp[i];
     }
