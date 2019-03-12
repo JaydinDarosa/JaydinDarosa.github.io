@@ -8,4 +8,3 @@ Here are some useful tools & online applications I've made:
 
 
 
->Any sufficiently advanced technology is indistinguishable from magic -Arthur C. Clarke
